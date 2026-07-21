@@ -90,12 +90,30 @@ export default function Projects() {
                       transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: i * 0.3 }}
                       className="relative"
                     >
-                      <PhoneMockup img={project.img} title={texts.title || ''} />
+                      {i === 0 ? (
+                        <Link to="/projects/expense-tracker" aria-label={`View ${texts.title} case study`} className="block">
+                          <PhoneMockup img={project.img} title={texts.title || ''} />
+                        </Link>
+                      ) : i === 1 ? (
+                        <Link to="/projects/qatta" aria-label={`View ${texts.title} case study`} className="block">
+                          <PhoneMockup img={project.img} title={texts.title || ''} />
+                        </Link>
+                      ) : (
+                        <Link to="/projects/al-dafter" aria-label={`View ${texts.title} case study`} className="block">
+                          <PhoneMockup img={project.img} title={texts.title || ''} />
+                        </Link>
+                      )}
                     </motion.div>
                   </div>
 
                   <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">
-                    {texts.title}
+                    {i === 0 ? (
+                      <Link to="/projects/expense-tracker" className="hover:text-accent transition-colors">{texts.title}</Link>
+                    ) : i === 1 ? (
+                      <Link to="/projects/qatta" className="hover:text-accent transition-colors">{texts.title}</Link>
+                    ) : (
+                      <Link to="/projects/al-dafter" className="hover:text-accent transition-colors">{texts.title}</Link>
+                    )}
                   </h3>
                   <p className="text-secondary text-sm leading-relaxed mb-4 flex-1">
                     {texts.desc}
@@ -133,9 +151,29 @@ export default function Projects() {
                       <ExternalLink size={16} className="group-hover/btn:scale-110 transition-transform" />
                       <span>{t('projects.livePreview')}</span>
                     </a>
+                    {i === 0 && (
+                      <Link
+                        to="/projects/expense-tracker"
+                        className="flex items-center gap-2 px-4 py-2 bg-accent text-text rounded-lg hover:bg-accent-secondary transition-all duration-300 text-xs sm:text-sm group/btn font-medium"
+                        aria-label={`View ${texts.title} case study`}
+                      >
+                        <span>View Case Study</span>
+                        <ArrowRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                      </Link>
+                    )}
                     {i === 1 && (
                       <Link
                         to="/projects/qatta"
+                        className="flex items-center gap-2 px-4 py-2 bg-accent text-text rounded-lg hover:bg-accent-secondary transition-all duration-300 text-xs sm:text-sm group/btn font-medium"
+                        aria-label={`View ${texts.title} case study`}
+                      >
+                        <span>View Case Study</span>
+                        <ArrowRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                      </Link>
+                    )}
+                    {i === 2 && (
+                      <Link
+                        to="/projects/al-dafter"
                         className="flex items-center gap-2 px-4 py-2 bg-accent text-text rounded-lg hover:bg-accent-secondary transition-all duration-300 text-xs sm:text-sm group/btn font-medium"
                         aria-label={`View ${texts.title} case study`}
                       >

@@ -10,6 +10,8 @@ import Skills from './sections/Skills'
 import Contact from './sections/Contact'
 import Loader from './components/Loader'
 import QattaProject from './pages/QattaProject.jsx'
+import ExpenseTrackerProject from './pages/ExpenseTrackerProject.jsx'
+import ALDaftProject from './pages/ALDaftProject.jsx'
 import { useLanguage } from './context/useLanguage.js'
 
 const easePremium = [0.22, 1, 0.36, 1]
@@ -245,6 +247,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects/qatta" element={<QattaProject />} />
+        <Route path="/projects/expense-tracker" element={<ExpenseTrackerProject />} />
+        <Route path="/projects/al-dafter" element={<ALDaftProject />} />
       </Routes>
     </div>
   )
