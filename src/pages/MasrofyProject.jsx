@@ -55,12 +55,35 @@ const screens = [
   },
 ]
 
+const whyIBuiltThis = {
+  explanation:
+    'Masrofy was built to simplify personal expense management and enhance daily financial awareness. It replaces chaotic manual tracking with a simple, intuitive experience that enables fast transaction recording and organized financial history.',
+  highlights: [
+    'Daily expense tracking',
+    'Better financial awareness',
+    'Simple and intuitive experience',
+    'Fast transaction recording',
+    'Organized financial history',
+  ],
+}
+
+const architectureSteps = [
+  { title: 'Flutter App', icon: 'Smartphone' },
+  { title: 'Local Business Logic', icon: 'Cpu' },
+  { title: 'SQLite / Local Storage', icon: 'Database' },
+  { title: 'Expense Categories', icon: 'Layers' },
+  { title: 'Transactions', icon: 'FileText' },
+  { title: 'Analytics Dashboard', icon: 'BarChart3' },
+]
+
 export default function MasrofyProject() {
   return (
     <ProjectPage
       title={<>Masrofy <span className="gradient-text">App</span></>}
       subtitle="A modern expense management application designed to help users organize daily transactions, monitor spending, and maintain complete financial records through a clean and intuitive user experience."
-      techs={['Flutter', 'Firebase', 'Cloud Firestore']}
+      techs={['Flutter', 'SQLite', 'Clean Arch', 'Local Storage']}
+      whyIBuiltThis={whyIBuiltThis}
+      architectureSteps={architectureSteps}
       screens={screens}
       screenshots={screenshots}
       github="https://github.com/ahmedbawzir12-png"

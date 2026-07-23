@@ -24,10 +24,9 @@ const ar = {
     subtitle:
       'مطور Flutter يُفكّر كمدير مشاريع، ويَبني كمُهندس، ويُسلّم كشركة ناشئة.',
     stats: {
-      projects: { value: '١٥+', label: 'مشروع مُسلّم' },
-      satisfaction: { value: '٩٨%', label: 'رضا العملاء' },
-      experience: { value: '٣+', label: 'سنوات خبرة' },
-      technologies: { value: '١٠+', label: 'تقنية' },
+      projects: { value: '٥+', label: 'مشروع مُكتمل', numeric: 5, suffix: '+' },
+      experience: { value: '١+', label: 'سنوات خبرة', numeric: 1, suffix: '+' },
+      technologies: { value: '٤+', label: 'تقنيات أساسية', numeric: 4, suffix: '+' },
     },
     philosophy: [
       {

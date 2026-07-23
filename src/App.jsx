@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './sections/About'
 import Projects from './sections/Projects'
+import Process from './sections/Process'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
 import Loader from './components/Loader'
@@ -226,6 +227,7 @@ function HomePage() {
         <Hero />
         <About />
         <Projects />
+        <Process />
         <Skills />
         <GitHubSection />
         <Contact />

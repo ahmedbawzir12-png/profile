@@ -41,12 +41,35 @@ const screens = [
   },
 ]
 
+const whyIBuiltThis = {
+  explanation:
+    'AL Dafter was created to replace traditional paper bookkeeping with a modern digital solution. It simplifies daily merchant operations by organizing customer accounts, tracking outstanding debts, and ensuring accurate financial record-keeping.',
+  highlights: [
+    'Customer management',
+    'Debt tracking',
+    'Financial organization',
+    'Faster daily operations',
+    'Accurate record keeping',
+  ],
+}
+
+const architectureSteps = [
+  { title: 'Flutter App', icon: 'Smartphone' },
+  { title: 'Customer Management', icon: 'Users' },
+  { title: 'Debt Management', icon: 'ShieldAlert' },
+  { title: 'SQLite Database', icon: 'Database' },
+  { title: 'Financial Reports', icon: 'BarChart3' },
+  { title: 'Backup & Restore', icon: 'HardDrive' },
+]
+
 export default function ALDaftProject() {
   return (
     <ProjectPage
       title={<>AL Dafter <span className="gradient-text">App</span></>}
       subtitle="A modern bookkeeping and debt management application that helps users organize customers, record financial transactions, monitor balances, and simplify daily financial management through an intuitive and professional interface."
-      techs={['Flutter', 'Firebase', 'Cloud Firestore']}
+      techs={['Flutter', 'SQLite', 'Debt Logic', 'Backup & Sync']}
+      whyIBuiltThis={whyIBuiltThis}
+      architectureSteps={architectureSteps}
       screens={screens}
       screenshots={screenshots}
       github="https://github.com/ahmedbawzir12-png"

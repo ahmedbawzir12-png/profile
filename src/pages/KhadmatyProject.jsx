@@ -21,9 +21,20 @@ import {
 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Lightbox from '../components/Lightbox.jsx'
+import WhyIBuiltThis from '../components/WhyIBuiltThis.jsx'
+import ArchitectureFlow from '../components/ArchitectureFlow.jsx'
 import { useLanguage } from '../context/useLanguage.js'
 
 const easePremium = [0.22, 1, 0.36, 1]
+
+const khadmatyArchSteps = [
+  { title: 'Flutter App', icon: 'Smartphone' },
+  { title: 'Firebase Auth', icon: 'Lock' },
+  { title: 'Role-Based Access', icon: 'ShieldCheck' },
+  { title: 'Cloud Firestore', icon: 'Database' },
+  { title: 'Admin / Broker / Provider / Customer', icon: 'Users' },
+  { title: 'Responsive Flutter UI', icon: 'Layout' },
+]
 
 // Dynamically import all Khadmaty screenshots using Vite import.meta.glob
 const imageModules = import.meta.glob(
@@ -557,6 +568,21 @@ export default function KhadmatyProject() {
           </div>
         </div>
       </section>
+
+      {/* WHY I BUILT THIS SECTION */}
+      <WhyIBuiltThis
+        explanation="Khadmaty was created to solve the difficulty of connecting customers, service providers, brokers, and administrators through one scalable platform. By digitizing regional dispatching and direct offer negotiations, it eliminates communication bottlenecks and establishes transparent service delivery."
+        highlights={[
+          'Multi-role architecture',
+          'Marketplace concept',
+          'Organized service management',
+          'Better communication',
+          'Scalable business model',
+        ]}
+      />
+
+      {/* ARCHITECTURE FLOW SECTION */}
+      <ArchitectureFlow steps={khadmatyArchSteps} />
 
       {/* PROJECT STATISTICS CARDS */}
       <section className="py-16 px-4 bg-accent/5 border-y border-accent/10">

@@ -24,10 +24,9 @@ const en = {
     subtitle:
       'Flutter developer who thinks like a PM, builds like an architect, and ships like a startup.',
     stats: {
-      projects: { value: '15+', label: 'Projects Delivered' },
-      satisfaction: { value: '98%', label: 'Client Satisfaction' },
-      experience: { value: '3+', label: 'Years Experience' },
-      technologies: { value: '10+', label: 'Technologies' },
+      projects: { value: '5+', label: 'Projects Completed', numeric: 5, suffix: '+' },
+      experience: { value: '1+', label: 'Years of Experience', numeric: 1, suffix: '+' },
+      technologies: { value: '4+', label: 'Core Technologies', numeric: 4, suffix: '+' },
     },
     philosophy: [
       {
