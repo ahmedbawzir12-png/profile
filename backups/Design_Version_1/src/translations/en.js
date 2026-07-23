@@ -66,12 +66,8 @@ const en = {
       'Flutter applications built with clean architecture and premium user experiences.',
     list: [
       {
-        title: 'Khadmaty App',
-        desc: 'Comprehensive multi-role service marketplace platform connecting customers, service providers, brokers, and administrators in one intelligent ecosystem.',
-      },
-      {
-        title: 'Masrofy App',
-        desc: 'Smart expense management app with clean UI, real-time transaction tracking, and insightful spending analytics.',
+        title: 'Expense Tracker App',
+        desc: 'Smart expense tracking app with clean UI, realtime management, and insightful spending analytics.',
       },
       {
         title: 'Qatta Management App',
@@ -107,11 +103,7 @@ const en = {
     viewRepo: 'View Repository',
     repos: [
       {
-        name: 'Khadmaty App',
-        desc: 'Multi-role service marketplace built with Flutter, Firebase, and Clean Architecture.',
-      },
-      {
-        name: 'Masrofy App',
+        name: 'Expense Tracker',
         desc: 'Smart expense tracking with real-time analytics and clean architecture.',
       },
       {

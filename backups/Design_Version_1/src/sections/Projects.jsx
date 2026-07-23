@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import { ExternalLink, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import khadmatyApp from '../assets/images/Khadmaty/users/home.jpg'
 import expenseApp from '../assets/images/expense-app.png'
 import qattaApp from '../assets/images/Qatta-app.png'
 import dafterApp from '../assets/images/AL-Dafter-app.png'
@@ -11,28 +10,18 @@ const easePremium = [0.22, 1, 0.36, 1]
 
 const projectsData = [
   {
-    route: '/projects/khadmaty',
-    img: khadmatyApp,
-    tech: ['Flutter', 'Firebase', 'Cloud Firestore', 'Clean Arch'],
-    github: 'https://github.com/ahmedbawzir12-png',
-    live: '#',
-  },
-  {
-    route: '/projects/masrofy',
     img: expenseApp,
     tech: ['Flutter', 'Firebase'],
     github: 'https://github.com/ahmedbawzir12-png',
     live: '#',
   },
   {
-    route: '/projects/qatta',
     img: qattaApp,
     tech: ['Flutter', 'Firebase'],
     github: 'https://github.com/ahmedbawzir12-png',
     live: '#',
   },
   {
-    route: '/projects/al-dafter',
     img: dafterApp,
     tech: ['Flutter', 'Firebase'],
     github: 'https://github.com/ahmedbawzir12-png',
@@ -80,12 +69,12 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           {projectsData.map((project, i) => {
             const texts = projectTexts[i] || {}
             return (
               <motion.div
-                key={project.route}
+                key={texts.title || i}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
@@ -101,14 +90,30 @@ export default function Projects() {
                       transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: i * 0.3 }}
                       className="relative"
                     >
-                      <Link to={project.route} aria-label={`View ${texts.title} case study`} className="block">
-                        <PhoneMockup img={project.img} title={texts.title || ''} />
-                      </Link>
+                      {i === 0 ? (
+                        <Link to="/projects/expense-tracker" aria-label={`View ${texts.title} case study`} className="block">
+                          <PhoneMockup img={project.img} title={texts.title || ''} />
+                        </Link>
+                      ) : i === 1 ? (
+                        <Link to="/projects/qatta" aria-label={`View ${texts.title} case study`} className="block">
+                          <PhoneMockup img={project.img} title={texts.title || ''} />
+                        </Link>
+                      ) : (
+                        <Link to="/projects/al-dafter" aria-label={`View ${texts.title} case study`} className="block">
+                          <PhoneMockup img={project.img} title={texts.title || ''} />
+                        </Link>
+                      )}
                     </motion.div>
                   </div>
 
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-accent transition-colors duration-300">
-                    <Link to={project.route} className="hover:text-accent transition-colors">{texts.title}</Link>
+                  <h3 className="text-lg font-semibold mb-2 group-hover:text-accent transition-colors duration-300">
+                    {i === 0 ? (
+                      <Link to="/projects/expense-tracker" className="hover:text-accent transition-colors">{texts.title}</Link>
+                    ) : i === 1 ? (
+                      <Link to="/projects/qatta" className="hover:text-accent transition-colors">{texts.title}</Link>
+                    ) : (
+                      <Link to="/projects/al-dafter" className="hover:text-accent transition-colors">{texts.title}</Link>
+                    )}
                   </h3>
                   <p className="text-secondary text-sm leading-relaxed mb-4 flex-1">
                     {texts.desc}
@@ -125,35 +130,57 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-2 pt-3 border-t border-accent/5">
+                  <div className="flex flex-wrap items-center gap-2 pt-2 border-t border-accent/5">
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-3.5 py-2 glass rounded-lg text-secondary hover:text-accent hover:border-accent/30 transition-all duration-300 text-xs group/btn"
+                      className="flex items-center gap-2 px-4 py-2 glass rounded-lg text-secondary hover:text-accent hover:border-accent/30 transition-all duration-300 text-xs sm:text-sm group/btn"
                       aria-label={`View ${texts.title} source code on GitHub`}
                     >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover/btn:scale-110 transition-transform"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover/btn:scale-110 transition-transform"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
                       <span>{t('projects.github')}</span>
                     </a>
                     <a
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-3.5 py-2 bg-accent/10 rounded-lg text-accent hover:bg-accent/20 transition-all duration-300 text-xs group/btn"
+                      className="flex items-center gap-2 px-4 py-2 bg-accent/10 rounded-lg text-accent hover:bg-accent/20 transition-all duration-300 text-xs sm:text-sm group/btn"
                       aria-label={`View ${texts.title} live preview`}
                     >
-                      <ExternalLink size={14} className="group-hover/btn:scale-110 transition-transform" />
+                      <ExternalLink size={16} className="group-hover/btn:scale-110 transition-transform" />
                       <span>{t('projects.livePreview')}</span>
                     </a>
-                    <Link
-                      to={project.route}
-                      className="flex items-center gap-2 px-4 py-2 bg-accent text-text rounded-lg hover:bg-accent-secondary transition-all duration-300 text-xs group/btn font-medium ms-auto"
-                      aria-label={`View ${texts.title} case study`}
-                    >
-                      <span>View Case Study</span>
-                      <ArrowRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
-                    </Link>
+                    {i === 0 && (
+                      <Link
+                        to="/projects/expense-tracker"
+                        className="flex items-center gap-2 px-4 py-2 bg-accent text-text rounded-lg hover:bg-accent-secondary transition-all duration-300 text-xs sm:text-sm group/btn font-medium"
+                        aria-label={`View ${texts.title} case study`}
+                      >
+                        <span>View Case Study</span>
+                        <ArrowRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                      </Link>
+                    )}
+                    {i === 1 && (
+                      <Link
+                        to="/projects/qatta"
+                        className="flex items-center gap-2 px-4 py-2 bg-accent text-text rounded-lg hover:bg-accent-secondary transition-all duration-300 text-xs sm:text-sm group/btn font-medium"
+                        aria-label={`View ${texts.title} case study`}
+                      >
+                        <span>View Case Study</span>
+                        <ArrowRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                      </Link>
+                    )}
+                    {i === 2 && (
+                      <Link
+                        to="/projects/al-dafter"
+                        className="flex items-center gap-2 px-4 py-2 bg-accent text-text rounded-lg hover:bg-accent-secondary transition-all duration-300 text-xs sm:text-sm group/btn font-medium"
+                        aria-label={`View ${texts.title} case study`}
+                      >
+                        <span>View Case Study</span>
+                        <ArrowRight size={14} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                      </Link>
+                    )}
                   </div>
                 </div>
               </motion.div>
