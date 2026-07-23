@@ -24,10 +24,9 @@ const ar = {
     subtitle:
       'مطور Flutter يُفكّر كمدير مشاريع، ويَبني كمُهندس، ويُسلّم كشركة ناشئة.',
     stats: {
-      projects: { value: '١٥+', label: 'مشروع مُسلّم' },
-      satisfaction: { value: '٩٨%', label: 'رضا العملاء' },
-      experience: { value: '٣+', label: 'سنوات خبرة' },
-      technologies: { value: '١٠+', label: 'تقنية' },
+      projects: { value: '٥+', label: 'مشروع مُكتمل', numeric: 5, suffix: '+' },
+      experience: { value: '١+', label: 'سنوات خبرة', numeric: 1, suffix: '+' },
+      technologies: { value: '٤+', label: 'تقنيات أساسية', numeric: 4, suffix: '+' },
     },
     philosophy: [
       {
@@ -66,8 +65,12 @@ const ar = {
       'تطبيقات Flutter بُنيَت بهندسة نظيفة وتجارب مستخدم متميزة.',
     list: [
       {
-        title: 'تطبيق تتبع المصروفات',
-        desc: 'تطبيق ذكي لتتبع المصروفات بواجهة نظيفة، وإدارة آنية، وتحليلات إنفاق ثاقبة.',
+        title: 'تطبيق خدمتي',
+        desc: 'منصة سوق خدمات متكاملة متعددة الأدوار تربط العملاء ومزودي الخدمات والوسطاء والمدراء في بيئة ذكية واحدة.',
+      },
+      {
+        title: 'تطبيق مصروفي',
+        desc: 'تطبيق ذكي لإدارة المصروفات بواجهة أنيقة، وتتبع فوري للمعاملات، وتحليلات إنفاق ثاقبة.',
       },
       {
         title: 'تطبيق قطّة للإدارة',
@@ -103,7 +106,11 @@ const ar = {
     viewRepo: 'عرض المستودع',
     repos: [
       {
-        name: 'Expense Tracker',
+        name: 'Khadmaty App',
+        desc: 'سوق خدمات متعدد الأدوار مبني بـ Flutter و Firebase مع هندسة نظيفة.',
+      },
+      {
+        name: 'Masrofy App',
         desc: 'تتبع ذكي للمصروفات مع تحليلات آنية وهندسة نظيفة.',
       },
       {

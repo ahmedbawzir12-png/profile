@@ -310,6 +310,55 @@ function processImages(lang, t) {
   })
 
   return roleGroups
+}�متوقعة بدقة.'
+    } else if (lower.includes('track')) {
+      category = 'تتبع الطلب الآني'
+      desc = 'خط زمني للحالة الفورية يتيح للعملاء متابعة تأكيد الطلب ووصول المزود وتقدم العمل الجاري ومراحل الإتمام خطوة بخطوة.'
+    } else if (lower.includes('provider') || lower.includes('brovider')) {
+      category = 'دليل مزودي الخدمات'
+      desc = 'تصفّح ومقارنة مزودي الخدمات الموثّقين بأسعار شفافة ومراجعات حقيقية وعدد الوظائف المنجزة وخيارات تواصل مباشر.'
+    } else if (lower.includes('rating') || lower.includes('comment')) {
+      category = 'التقييمات والمراجعات'
+      desc = 'نظام تقييم شفاف يمكّن العملاء من تقييم أداء المزود وترك مراجعات تفصيلية والمساهمة في الحفاظ على مستوى خدمة مرتفع عبر المنصة.'
+    } else if (lower.includes('login') || lower.includes('account')) {
+      category = 'Authentication والتسجيل'
+      desc = 'تدفق تسجيل دخول وتسجيل آمن متعدد الأدوار يشمل رمز OTP الهاتفي والتحقق من البريد الإلكتروني واختيار الدور بسلاسة خلال الإعداد الأوّلي.'
+    } else {
+      category = 'بوابة العميل'
+      desc = 'واجهة بديهية مصمّمة للتصفح السلس واستعراض الخدمات والتنقل بين الفئات الفرعية وإدارة الخدمات بمرونة وشفافية تامة.'
+    }
+  }
+
+  return { title, desc, category, img: imgUrl, filename }
+}
+
+// Process glob imports into role-based image data (language-aware)
+function processImages(lang) {
+  const roleGroups = {
+    admin: [],
+    broker: [],
+    provider: [],
+    user: [],
+  }
+
+  const generator = lang === 'ar' ? generateScreenDetailsAr : generateScreenDetailsEn
+
+  Object.entries(imageModules).forEach(([filepath, imgUrl]) => {
+    const parts = filepath.split('/')
+    const folder = parts[parts.length - 2].toLowerCase()
+    const filename = parts[parts.length - 1]
+
+    let role = 'user'
+    if (folder.includes('admin')) role = 'admin'
+    else if (folder.includes('boker') || folder.includes('broker')) role = 'broker'
+    else if (folder.includes('provider')) role = 'provider'
+    else if (folder.includes('user')) role = 'user'
+
+    const item = generator(role, filename, imgUrl)
+    roleGroups[role].push(item)
+  })
+
+  return roleGroups
 }
 
 const roleBaseConfigs = [
@@ -382,7 +431,7 @@ export default function KhadmatyProject() {
   const { lang, t } = useLanguage()
   const isRtl = lang === 'ar'
 
-  const roleImages = useMemo(() => processImages(lang, t), [lang, t])
+  const roleImages = useMemo(() => processImages(lang), [lang])
   const [activeTab, setActiveTab] = useState('admin')
   const [lightboxIndex, setLightboxIndex] = useState(null)
   const [allScreenshotsList, setAllScreenshotsList] = useState([])

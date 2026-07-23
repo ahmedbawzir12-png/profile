@@ -499,7 +499,7 @@ const ar = {
       requestsDisplay: 'شاشة عرض طلبات العمل',
       sendingJobOffer: 'شاشة إرسال عرض عمل للعميل',
       providerChat: 'شاشة محادثات مقدم الخدمة',
-      providerProfile: 'شاشة الملف الشخصي',
+      providerProfile: 'شاشة الملف الشخصي لمقدم الخدمة',
       providerDashboard: 'لوحة تحكم مقدم الخدمة',
 
       acceptRejectOrder: 'شاشة قبول أو رفض العرض',

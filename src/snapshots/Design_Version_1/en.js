@@ -499,7 +499,7 @@ const en = {
       requestsDisplay: 'Job Requests Display Screen',
       sendingJobOffer: 'Sending A Job Offer To The Client Screen',
       providerChat: 'Provider Chatting Screen',
-      providerProfile: 'Profile Screen',
+      providerProfile: 'Provider Profile Screen',
       providerDashboard: 'Provider Dashboard',
 
       acceptRejectOrder: 'Accept Or Reject Offer Screen',

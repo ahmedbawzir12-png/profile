@@ -264,19 +264,19 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2, ease: easePremium }}
-          className="hidden lg:flex items-center justify-center relative"
+          className="order-first lg:order-last flex items-center justify-center relative my-4 lg:my-0"
         >
           <motion.div
             animate={{ y: [0, -8, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] xl:w-[380px] xl:h-[380px]"
+            className="relative w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] xl:w-[360px] xl:h-[360px]"
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-accent via-accent-secondary to-accent animate-border-rotate p-[2px]">
               <div className="w-full h-full rounded-full bg-[#070B14]" />
             </div>
 
-            <div className="absolute inset-0 rounded-full bg-accent/30 blur-[70px] animate-pulse" aria-hidden="true" />
-            <div className="absolute inset-[10%] rounded-full bg-accent-secondary/20 blur-[50px] animate-pulse" style={{ animationDelay: '1s' }} aria-hidden="true" />
+            <div className="absolute inset-0 rounded-full bg-accent/30 blur-[50px] sm:blur-[70px] animate-pulse" aria-hidden="true" />
+            <div className="absolute inset-[10%] rounded-full bg-accent-secondary/20 blur-[35px] sm:blur-[50px] animate-pulse" style={{ animationDelay: '1s' }} aria-hidden="true" />
 
             <div className="absolute inset-[4px] rounded-full overflow-hidden border-2 border-accent/20 shadow-2xl shadow-accent/20">
               <img
@@ -288,30 +288,30 @@ export default function Hero() {
             </div>
 
             <motion.div
-              animate={{ y: [0, -8, 0] }}
+              animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-2 -right-2 px-3 py-1.5 glass rounded-full border border-accent/20 shadow-lg flex items-center gap-1.5"
+              className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 px-2.5 py-1 sm:px-3 sm:py-1.5 glass rounded-full border border-accent/20 shadow-lg flex items-center gap-1.5"
             >
               <Code size={12} className="text-blue-400" />
-              <span className="text-xs text-text font-medium">Flutter</span>
+              <span className="text-[10px] sm:text-xs text-text font-medium">Flutter</span>
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, 8, 0] }}
+              animate={{ y: [0, 6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute -bottom-1 -left-3 px-3 py-1.5 glass rounded-full border border-accent/20 shadow-lg flex items-center gap-1.5"
+              className="absolute -bottom-1 -left-1 sm:-left-3 px-2.5 py-1 sm:px-3 sm:py-1.5 glass rounded-full border border-accent/20 shadow-lg flex items-center gap-1.5"
             >
               <Cpu size={12} className="text-purple-400" />
-              <span className="text-xs text-text font-medium">AI</span>
+              <span className="text-[10px] sm:text-xs text-text font-medium">AI</span>
             </motion.div>
 
             <motion.div
-              animate={{ y: [0, -6, 0] }}
+              animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute top-1/2 -right-4 px-3 py-1.5 glass rounded-full border border-accent/20 shadow-lg flex items-center gap-1.5"
+              className="absolute top-1/2 -right-2 sm:-right-4 px-2.5 py-1 sm:px-3 sm:py-1.5 glass rounded-full border border-accent/20 shadow-lg flex items-center gap-1.5"
             >
               <Layout size={12} className="text-pink-400" />
-              <span className="text-xs text-text font-medium">UI/UX</span>
+              <span className="text-[10px] sm:text-xs text-text font-medium">UI/UX</span>
             </motion.div>
           </motion.div>
         </motion.div>

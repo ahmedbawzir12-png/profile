@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Cairo';
+  src: url('./assets/fonts/Cairo-SemiBold.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-bg: #070B14;
   --color-card: rgba(17, 24, 39, 0.65);
@@ -8,11 +24,26 @@
   --color-text: #F9FAFB;
   --color-secondary: #9CA3AF;
 
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Roboto', 'Cairo', system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
 
   --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html, body {
+  font-family: 'Roboto', 'Cairo', system-ui, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[lang="ar"], body[dir="rtl"], [dir="rtl"] {
+  font-family: 'Cairo', system-ui, sans-serif;
+}
+
+html[lang="en"], body[dir="ltr"], [dir="ltr"] {
+  font-family: 'Roboto', system-ui, sans-serif;
 }
 
 * {

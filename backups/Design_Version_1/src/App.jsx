@@ -6,12 +6,14 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './sections/About'
 import Projects from './sections/Projects'
+import Process from './sections/Process'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
 import Loader from './components/Loader'
 import QattaProject from './pages/QattaProject.jsx'
-import ExpenseTrackerProject from './pages/ExpenseTrackerProject.jsx'
+import MasrofyProject from './pages/MasrofyProject.jsx'
 import ALDaftProject from './pages/ALDaftProject.jsx'
+import KhadmatyProject from './pages/KhadmatyProject.jsx'
 import { useLanguage } from './context/useLanguage.js'
 
 const easePremium = [0.22, 1, 0.36, 1]
@@ -127,10 +129,10 @@ function GitHubSection() {
                 <span className="px-2 py-0.5 rounded bg-accent/10 text-accent font-mono">Dart</span>
                 <div className="flex items-center gap-3">
                   <span className="flex items-center gap-1">
-                    <Star size={12} /> {[24, 18, 15][i]}
+                    <Star size={12} /> {[24, 18, 15, 12][i] || 15}
                   </span>
                   <span className="flex items-center gap-1">
-                    <GitFork size={12} /> {[8, 5, 4][i]}
+                    <GitFork size={12} /> {[8, 5, 4, 3][i] || 4}
                   </span>
                 </div>
               </div>
@@ -225,6 +227,7 @@ function HomePage() {
         <Hero />
         <About />
         <Projects />
+        <Process />
         <Skills />
         <GitHubSection />
         <Contact />
@@ -246,8 +249,9 @@ export default function App() {
     <div className="min-h-screen bg-bg">
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/projects/khadmaty" element={<KhadmatyProject />} />
+        <Route path="/projects/masrofy" element={<MasrofyProject />} />
         <Route path="/projects/qatta" element={<QattaProject />} />
-        <Route path="/projects/expense-tracker" element={<ExpenseTrackerProject />} />
         <Route path="/projects/al-dafter" element={<ALDaftProject />} />
       </Routes>
     </div>

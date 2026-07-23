@@ -27,12 +27,34 @@ const screens = [
   },
 ]
 
+const whyIBuiltThis = {
+  explanation:
+    'Qatta was designed to organize members and manage shared expenses in an efficient and transparent way. It eliminates ambiguity in group budgets, simplifies split calculations, and ensures every participant has clear visibility into shared records.',
+  highlights: [
+    'Member management',
+    'Shared expense tracking',
+    'Organized records',
+    'Better financial visibility',
+  ],
+}
+
+const architectureSteps = [
+  { title: 'Flutter App', icon: 'Smartphone' },
+  { title: 'Member Management', icon: 'Users' },
+  { title: 'Shared Expenses', icon: 'Layers' },
+  { title: 'Financial Calculations', icon: 'Calculator' },
+  { title: 'Local Database', icon: 'Database' },
+  { title: 'Reports', icon: 'BarChart3' },
+]
+
 export default function QattaProject() {
   return (
     <ProjectPage
       title={<>Qatta <span className="gradient-text">Management</span></>}
       subtitle="Modern management solution for organizing members, tracking expenses, and managing daily operations efficiently."
-      techs={['Flutter', 'Firebase', 'Cloud Firestore']}
+      techs={['Flutter', 'Firebase', 'Cloud Firestore', 'Financial Logic']}
+      whyIBuiltThis={whyIBuiltThis}
+      architectureSteps={architectureSteps}
       screens={screens}
       screenshots={screenshots}
       github="https://github.com/ahmedbawzir12-png"

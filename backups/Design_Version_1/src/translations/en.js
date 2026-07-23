@@ -24,10 +24,9 @@ const en = {
     subtitle:
       'Flutter developer who thinks like a PM, builds like an architect, and ships like a startup.',
     stats: {
-      projects: { value: '15+', label: 'Projects Delivered' },
-      satisfaction: { value: '98%', label: 'Client Satisfaction' },
-      experience: { value: '3+', label: 'Years Experience' },
-      technologies: { value: '10+', label: 'Technologies' },
+      projects: { value: '5+', label: 'Projects Completed', numeric: 5, suffix: '+' },
+      experience: { value: '1+', label: 'Years of Experience', numeric: 1, suffix: '+' },
+      technologies: { value: '4+', label: 'Core Technologies', numeric: 4, suffix: '+' },
     },
     philosophy: [
       {
@@ -66,8 +65,12 @@ const en = {
       'Flutter applications built with clean architecture and premium user experiences.',
     list: [
       {
-        title: 'Expense Tracker App',
-        desc: 'Smart expense tracking app with clean UI, realtime management, and insightful spending analytics.',
+        title: 'Khadmaty App',
+        desc: 'Comprehensive multi-role service marketplace platform connecting customers, service providers, brokers, and administrators in one intelligent ecosystem.',
+      },
+      {
+        title: 'Masrofy App',
+        desc: 'Smart expense management app with clean UI, real-time transaction tracking, and insightful spending analytics.',
       },
       {
         title: 'Qatta Management App',
@@ -103,7 +106,11 @@ const en = {
     viewRepo: 'View Repository',
     repos: [
       {
-        name: 'Expense Tracker',
+        name: 'Khadmaty App',
+        desc: 'Multi-role service marketplace built with Flutter, Firebase, and Clean Architecture.',
+      },
+      {
+        name: 'Masrofy App',
         desc: 'Smart expense tracking with real-time analytics and clean architecture.',
       },
       {

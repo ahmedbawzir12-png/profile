@@ -3,6 +3,8 @@ import { motion } from 'framer-motion'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import Lightbox from './Lightbox.jsx'
+import WhyIBuiltThis from './WhyIBuiltThis.jsx'
+import ArchitectureFlow from './ArchitectureFlow.jsx'
 
 const easePremium = [0.22, 1, 0.36, 1]
 
@@ -19,7 +21,7 @@ const childVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: easePremium } },
 }
 
-export default function ProjectPage({ title, subtitle, techs, screens, screenshots, github, live }) {
+export default function ProjectPage({ title, subtitle, techs, whyIBuiltThis, architectureSteps, screens, screenshots, github, live }) {
   const [lightboxIndex, setLightboxIndex] = useState(null)
 
   return (
@@ -100,6 +102,16 @@ export default function ProjectPage({ title, subtitle, techs, screens, screensho
           </motion.div>
         </div>
       </motion.section>
+
+      {/* WHY I BUILT THIS SECTION */}
+      {whyIBuiltThis && (
+        <WhyIBuiltThis explanation={whyIBuiltThis.explanation} highlights={whyIBuiltThis.highlights} />
+      )}
+
+      {/* ARCHITECTURE FLOW SECTION */}
+      {architectureSteps && (
+        <ArchitectureFlow steps={architectureSteps} />
+      )}
 
       <section className="relative px-4 pb-28">
         <div className="max-w-6xl mx-auto">

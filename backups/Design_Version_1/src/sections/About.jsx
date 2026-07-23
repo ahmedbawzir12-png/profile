@@ -1,11 +1,46 @@
-import { motion } from 'framer-motion'
-import { Zap, Brain, Target, Rocket, Code, Users, CheckCircle, Layers } from 'lucide-react'
+import { useRef, useState, useEffect } from 'react'
+import { motion, useInView } from 'framer-motion'
+import { Zap, Brain, Target, Rocket, Code, CheckCircle, Layers } from 'lucide-react'
 import { useLanguage } from '../context/useLanguage.js'
 
 const easePremium = [0.22, 1, 0.36, 1]
 
+function StatCounter({ target, suffix, displayValue }) {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: '-50px' })
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (!isInView) return
+    let start = 0
+    const duration = 1500
+    const stepTime = 30
+    const steps = duration / stepTime
+    const increment = target / steps
+
+    const timer = setInterval(() => {
+      start += increment
+      if (start >= target) {
+        setCount(target)
+        clearInterval(timer)
+      } else {
+        setCount(Math.floor(start))
+      }
+    }, stepTime)
+
+    return () => clearInterval(timer)
+  }, [isInView, target])
+
+  return (
+    <span ref={ref} className="text-3xl sm:text-4xl font-extrabold gradient-text block mb-1">
+      {displayValue || `${count}${suffix}`}
+    </span>
+  )
+}
+
 export default function About() {
-  const { t } = useLanguage()
+  const { t, lang } = useLanguage()
+  const isAr = lang === 'ar'
 
   const strengths = [
     {
@@ -31,10 +66,27 @@ export default function About() {
   ]
 
   const stats = [
-    { value: t('about.stats.projects.value'), label: t('about.stats.projects.label'), icon: Code },
-    { value: t('about.stats.satisfaction.value'), label: t('about.stats.satisfaction.label'), icon: Users },
-    { value: t('about.stats.experience.value'), label: t('about.stats.experience.label'), icon: CheckCircle },
-    { value: t('about.stats.technologies.value'), label: t('about.stats.technologies.label'), icon: Layers },
+    {
+      target: 5,
+      suffix: '+',
+      displayValue: isAr ? '٥+' : null,
+      label: t('about.stats.projects.label'),
+      icon: Code,
+    },
+    {
+      target: 1,
+      suffix: '+',
+      displayValue: isAr ? '١+' : null,
+      label: t('about.stats.experience.label'),
+      icon: CheckCircle,
+    },
+    {
+      target: 4,
+      suffix: '+',
+      displayValue: isAr ? '٤+' : null,
+      label: t('about.stats.technologies.label'),
+      icon: Layers,
+    },
   ]
 
   const philosophy = [
@@ -70,26 +122,21 @@ export default function About() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: i * 0.1, ease: easePremium }}
-              className="glass-card rounded-xl p-6 text-center group hover:border-accent/30 transition-all duration-500"
+              transition={{ duration: 0.5, delay: i * 0.12, ease: easePremium }}
+              className="glass-card rounded-2xl p-6 text-center group hover:border-accent/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent/10 transition-all duration-500"
             >
-              <stat.icon size={20} className="text-accent mx-auto mb-3 group-hover:scale-110 transition-transform duration-300" />
-              <motion.span
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-                className="text-2xl sm:text-3xl font-bold gradient-text block"
-              >
-                {stat.value}
-              </motion.span>
-              <span className="text-secondary text-xs sm:text-sm mt-1 block">{stat.label}</span>
+              <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
+                <stat.icon size={20} className="text-accent" />
+              </div>
+              <StatCounter target={stat.target} suffix={stat.suffix} displayValue={stat.displayValue} />
+              <span className="text-secondary text-sm font-medium block">{stat.label}</span>
             </motion.div>
           ))}
         </div>

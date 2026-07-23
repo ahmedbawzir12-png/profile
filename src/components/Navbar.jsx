@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 import { useLanguage } from '../context/useLanguage.js'
 import LanguageSwitcher from './LanguageSwitcher'
+import ThemeSwitcher from './ThemeSwitcher'
 
 const easePremium = [0.22, 1, 0.36, 1]
 
@@ -41,7 +42,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: easePremium }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#070B14]/80 backdrop-blur-xl shadow-lg shadow-accent/5 border-b border-accent/5'
+          ? 'bg-bg/80 backdrop-blur-xl shadow-lg shadow-accent/5 border-b border-accent/5'
           : 'bg-transparent'
       }`}
       role="navigation"
@@ -49,14 +50,17 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18">
-          <a
-            href="#home"
-            className="text-xl sm:text-2xl font-bold tracking-tight group"
-            aria-label="Home"
-          >
-            <span className="text-accent group-hover:text-accent-secondary transition-colors duration-300">Ahmed</span>
-            <span className="text-text">.dev</span>
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="#home"
+              className="text-xl sm:text-2xl font-bold tracking-tight group"
+              aria-label="Home"
+            >
+              <span className="text-accent group-hover:text-accent-secondary transition-colors duration-300">Ahmed</span>
+              <span className="text-text">.dev</span>
+            </a>
+            <ThemeSwitcher />
+          </div>
 
           <div className="hidden md:flex items-center gap-8">
             {links.map((link) => (
@@ -94,7 +98,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: easePremium }}
-            className="md:hidden bg-[#070B14]/95 backdrop-blur-xl border-t border-accent/10"
+            className="md:hidden bg-bg/95 backdrop-blur-xl border-t border-accent/10"
             role="menu"
           >
             <div className="px-4 py-3 border-b border-accent/5">
