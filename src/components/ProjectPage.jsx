@@ -31,7 +31,7 @@ export default function ProjectPage({ title, subtitle, techs, whyIBuiltThis, arc
   return (
     <div className="min-h-screen bg-bg overflow-x-hidden">
       {/* Top Navigation Bar */}
-      <div className="sticky top-0 z-50 bg-[#070B14]/90 backdrop-blur-xl border-b border-accent/10">
+      <div className="sticky top-0 z-50 bg-bg/90 backdrop-blur-xl border-b border-accent/10">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-4">
           <motion.div
             initial={{ opacity: 0, x: isRtl ? 20 : -20 }}
@@ -186,7 +186,7 @@ export default function ProjectPage({ title, subtitle, techs, whyIBuiltThis, arc
         </div>
       </section>
 
-      <footer className="relative border-t border-accent/5 bg-[#070B14]">
+      <footer className="relative border-t border-accent/5 bg-bg">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <Link to="/" className="inline-flex items-center gap-2 text-secondary hover:text-accent transition-colors duration-300 text-sm font-medium group">

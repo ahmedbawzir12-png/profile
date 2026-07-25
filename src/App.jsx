@@ -158,7 +158,7 @@ function GitHubSection() {
 function Footer() {
   const { t } = useLanguage()
   return (
-    <footer className="relative border-t border-accent/5 bg-[#070B14]" role="contentinfo">
+    <footer className="relative border-t border-accent/5 bg-bg" role="contentinfo">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <a href="#home" className="text-lg font-bold tracking-tight" aria-label="Go to top">

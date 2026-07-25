@@ -19,7 +19,7 @@ export default function Contact() {
   }
 
   const inputClass = (field) =>
-    `w-full px-4 py-3 bg-[#070B14] border rounded-lg text-text placeholder-secondary/50 focus:outline-none transition-all duration-300 text-sm ${
+    `w-full px-4 py-3 bg-bg/80 border rounded-lg text-text placeholder-secondary/50 focus:outline-none transition-all duration-300 text-sm ${
       focused === field
         ? 'border-accent shadow-[0_0_20px_rgba(124,58,237,0.12)]'
         : 'border-accent/10 hover:border-accent/30'

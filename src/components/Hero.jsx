@@ -272,7 +272,7 @@ export default function Hero() {
             className="relative w-[200px] h-[200px] sm:w-[280px] sm:h-[280px] xl:w-[360px] xl:h-[360px]"
           >
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-accent via-accent-secondary to-accent animate-border-rotate p-[2px]">
-              <div className="w-full h-full rounded-full bg-[#070B14]" />
+              <div className="w-full h-full rounded-full bg-bg" />
             </div>
 
             <div className="absolute inset-0 rounded-full bg-accent/30 blur-[50px] sm:blur-[70px] animate-pulse" aria-hidden="true" />

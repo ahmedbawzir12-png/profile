@@ -17,7 +17,7 @@ export default function ThemeSwitcher() {
     {
       id: 'dark',
       label: isRtl ? 'داكن (افتراضي)' : 'Dark (Default)',
-      desc: isRtl ? 'المظهر الداكن الأصلي' : 'Original dark aesthetic',
+      desc: isRtl ? 'داكن فاخر ومريح (Obsidian)' : 'Deep Obsidian Slate aesthetic',
       icon: Moon,
       color: 'text-purple-400',
     },
