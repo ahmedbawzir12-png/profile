@@ -295,9 +295,9 @@ export default function Hero() {
 
             {/* Floating Orbital Badge 1: Flutter (Top Right) */}
             <motion.div
-              animate={{ y: [0, -7, 0] }}
+              animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 px-3 py-1.5 glass rounded-2xl border border-blue-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/80"
+              className="absolute top-0 right-0 sm:-top-2 sm:-right-4 px-3 py-1.5 glass rounded-2xl border border-blue-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/85 z-20"
             >
               <div className="p-1 rounded-lg bg-blue-500/15 text-blue-400">
                 <Code size={13} />
@@ -305,23 +305,11 @@ export default function Hero() {
               <span className="text-[11px] sm:text-xs text-text font-bold">Flutter</span>
             </motion.div>
 
-            {/* Floating Orbital Badge 2: AI Automation (Bottom Left) */}
-            <motion.div
-              animate={{ y: [0, 7, 0] }}
-              transition={{ duration: 4.1, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-              className="absolute -bottom-2 -left-2 sm:-left-4 px-3 py-1.5 glass rounded-2xl border border-purple-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/80"
-            >
-              <div className="p-1 rounded-lg bg-purple-500/15 text-purple-400">
-                <Cpu size={13} />
-              </div>
-              <span className="text-[11px] sm:text-xs text-text font-bold">AI Workflow</span>
-            </motion.div>
-
-            {/* Floating Orbital Badge 3: Clean Arch (Top Left) */}
+            {/* Floating Orbital Badge 2: Clean Arch (Top Left) */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ duration: 3.6, repeat: Infinity, ease: 'easeInOut', delay: 1.2 }}
-              className="absolute top-2 -left-3 sm:-left-5 px-3 py-1.5 glass rounded-2xl border border-amber-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/80"
+              className="absolute top-0 left-0 sm:-top-2 sm:-left-4 px-3 py-1.5 glass rounded-2xl border border-amber-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/85 z-20"
             >
               <div className="p-1 rounded-lg bg-amber-500/15 text-amber-400">
                 <Layers size={13} />
@@ -329,11 +317,23 @@ export default function Hero() {
               <span className="text-[11px] sm:text-xs text-text font-bold">Clean Arch</span>
             </motion.div>
 
+            {/* Floating Orbital Badge 3: AI Automation (Bottom Left) */}
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ duration: 4.1, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
+              className="absolute bottom-0 left-0 sm:-bottom-2 sm:-left-4 px-3 py-1.5 glass rounded-2xl border border-purple-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/85 z-20"
+            >
+              <div className="p-1 rounded-lg bg-purple-500/15 text-purple-400">
+                <Cpu size={13} />
+              </div>
+              <span className="text-[11px] sm:text-xs text-text font-bold">AI Workflow</span>
+            </motion.div>
+
             {/* Floating Orbital Badge 4: UI/UX (Bottom Right) */}
             <motion.div
-              animate={{ y: [0, -6, 0] }}
+              animate={{ y: [0, 6, 0] }}
               transition={{ duration: 3.8, repeat: Infinity, ease: 'easeInOut', delay: 1.8 }}
-              className="absolute -bottom-1 -right-2 sm:-right-4 px-3 py-1.5 glass rounded-2xl border border-pink-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/80"
+              className="absolute bottom-0 right-0 sm:-bottom-2 sm:-right-4 px-3 py-1.5 glass rounded-2xl border border-pink-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/85 z-20"
             >
               <div className="p-1 rounded-lg bg-pink-500/15 text-pink-400">
                 <Layout size={13} />

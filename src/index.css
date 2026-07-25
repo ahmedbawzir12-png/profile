@@ -381,26 +381,6 @@ html[lang="en"], body[dir="ltr"], [dir="ltr"] {
   transform: translate(50%, -50%);
 }
 
-[dir="rtl"] .absolute.inset-\[4px\] {
-  left: 4px;
-  right: 4px;
-}
-
-[dir="rtl"] .absolute.-top-2.-right-2 {
-  right: auto;
-  left: -0.5rem;
-}
-
-[dir="rtl"] .absolute.-bottom-1.-left-3 {
-  left: auto;
-  right: -0.75rem;
-}
-
-[dir="rtl"] .absolute.top-1\/2.-right-4 {
-  right: auto;
-  left: -1rem;
-}
-
 [dir="rtl"] .lg\:mx-0 {
   margin-left: auto;
   margin-right: 0;
