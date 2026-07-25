@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Sparkles } from 'lucide-react'
 import { useLanguage } from '../context/useLanguage.js'
 import LanguageSwitcher from './LanguageSwitcher'
 import ThemeSwitcher from './ThemeSwitcher'
@@ -10,6 +10,7 @@ const easePremium = [0.22, 1, 0.36, 1]
 export default function Navbar() {
   const { t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState('#home')
   const [mobileOpen, setMobileOpen] = useState(false)
 
   const links = [
@@ -21,10 +22,23 @@ export default function Navbar() {
   ]
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 30)
+    const onScroll = () => {
+      setScrolled(window.scrollY > 20)
+      const sections = links.map((l) => document.querySelector(l.href))
+      const scrollPos = window.scrollY + 200
+      sections.forEach((sec) => {
+        if (sec) {
+          const top = sec.offsetTop
+          const height = sec.offsetHeight
+          if (scrollPos >= top && scrollPos < top + height) {
+            setActiveSection(`#${sec.id}`)
+          }
+        }
+      })
+    }
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [links])
 
   useEffect(() => {
     if (mobileOpen) {
@@ -36,81 +50,115 @@ export default function Navbar() {
   }, [mobileOpen])
 
   return (
-    <motion.nav
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: easePremium }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-bg/80 backdrop-blur-xl shadow-lg shadow-accent/5 border-b border-accent/5'
-          : 'bg-transparent'
-      }`}
-      role="navigation"
-      aria-label="Main navigation"
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-18">
+    <header className="fixed top-0 left-0 right-0 z-50 px-3 sm:px-6 pt-3 pointer-events-none">
+      <motion.nav
+        initial={{ y: -30, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: easePremium }}
+        className={`pointer-events-auto max-w-5xl mx-auto rounded-full transition-all duration-500 glass border ${
+          scrolled
+            ? 'border-accent/25 shadow-2xl shadow-black/50 bg-bg/85 backdrop-blur-2xl py-2 px-4 sm:px-6'
+            : 'border-accent/15 bg-bg/60 backdrop-blur-xl py-2.5 px-4 sm:px-6'
+        }`}
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <div className="flex items-center justify-between">
+          {/* Logo & Theme Switcher */}
           <div className="flex items-center gap-3">
             <a
               href="#home"
-              className="text-xl sm:text-2xl font-bold tracking-tight group"
+              className="text-lg sm:text-xl font-extrabold tracking-tight group flex items-center gap-1.5"
               aria-label="Home"
             >
-              <span className="text-accent group-hover:text-accent-secondary transition-colors duration-300">Ahmed</span>
-              <span className="text-text">.dev</span>
+              <div className="w-7 h-7 rounded-lg bg-accent/15 border border-accent/30 flex items-center justify-center group-hover:bg-accent/25 transition-colors">
+                <Sparkles size={14} className="text-accent group-hover:rotate-12 transition-transform" />
+              </div>
+              <span>
+                <span className="text-accent group-hover:text-accent-secondary transition-colors duration-300">Ahmed</span>
+                <span className="text-text">.dev</span>
+              </span>
             </a>
             <ThemeSwitcher />
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="relative text-secondary text-sm font-medium hover:text-accent transition-colors duration-300 group"
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
+          {/* Desktop Nav Items */}
+          <div className="hidden md:flex items-center gap-1 bg-accent/5 p-1 rounded-full border border-accent/10">
+            {links.map((link) => {
+              const isActive = activeSection === link.href
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setActiveSection(link.href)}
+                  className={`relative px-4 py-1.5 text-xs font-semibold rounded-full transition-all duration-300 ${
+                    isActive
+                      ? 'text-text shadow-sm'
+                      : 'text-secondary hover:text-text hover:bg-accent/10'
+                  }`}
+                >
+                  {isActive && (
+                    <motion.div
+                      layoutId="activePill"
+                      className="absolute inset-0 bg-accent/20 border border-accent/30 rounded-full"
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                  <span className="relative z-10">{link.label}</span>
+                </a>
+              )
+            })}
           </div>
 
-          <div className="flex items-center gap-3">
+          {/* Controls & Mobile Hamburger */}
+          <div className="flex items-center gap-2.5">
             <div className="hidden md:block">
               <LanguageSwitcher />
             </div>
+
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden p-2 text-text hover:text-accent transition-colors"
+              className="md:hidden p-2 glass rounded-full text-text hover:text-accent border border-accent/15 transition-colors"
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
             >
-              {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>
-      </div>
+      </motion.nav>
 
+      {/* Mobile Popover Menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
+            initial={{ opacity: 0, scale: 0.95, y: -10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.3, ease: easePremium }}
-            className="md:hidden bg-bg/95 backdrop-blur-xl border-t border-accent/10"
+            className="pointer-events-auto md:hidden mt-3 max-w-md mx-auto p-4 glass rounded-3xl border border-accent/20 shadow-2xl shadow-black/60 backdrop-blur-2xl"
             role="menu"
           >
-            <div className="px-4 py-3 border-b border-accent/5">
+            <div className="flex items-center justify-between px-3 py-2 border-b border-accent/10 mb-2">
+              <p className="text-xs font-mono text-secondary uppercase tracking-wider">
+                {t('nav.home') ? 'القائمة' : 'Navigation'}
+              </p>
               <LanguageSwitcher />
             </div>
-            <div className="px-4 py-4 space-y-1">
+            <div className="space-y-1">
               {links.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block text-secondary text-sm font-medium hover:text-accent transition-colors duration-200 py-2.5 px-3 rounded-lg hover:bg-accent/5"
+                  onClick={() => {
+                    setActiveSection(link.href)
+                    setMobileOpen(false)
+                  }}
+                  className={`block text-xs font-semibold py-2.5 px-4 rounded-xl transition-all duration-200 ${
+                    activeSection === link.href
+                      ? 'bg-accent/20 text-accent border border-accent/30 font-bold'
+                      : 'text-secondary hover:text-text hover:bg-accent/10'
+                  }`}
                   role="menuitem"
                 >
                   {link.label}
@@ -120,6 +168,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </header>
   )
 }

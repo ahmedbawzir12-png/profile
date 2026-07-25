@@ -85,27 +85,31 @@ export default function ProjectPage({ title, subtitle, techs, whyIBuiltThis, arc
             </motion.div>
 
             <motion.div variants={childVariants} className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <a
-                href={live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-text font-semibold rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02]"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-accent-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="relative flex items-center gap-2">
-                  {t('projectPage.viewLive')}
-                  <ExternalLink size={16} />
-                </span>
-              </a>
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 px-7 py-3.5 border border-accent/30 text-text font-semibold rounded-xl hover:bg-accent/10 hover:border-accent/60 transition-all duration-300 hover:scale-[1.02]"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
-                {t('projectPage.sourceCode')}
-              </a>
+              {live && live !== '#' && (
+                <a
+                  href={live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-text font-semibold rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02]"
+                >
+                  <span className="absolute inset-0 bg-gradient-to-r from-accent-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <span className="relative flex items-center gap-2">
+                    {t('projectPage.viewLive')}
+                    <ExternalLink size={16} />
+                  </span>
+                </a>
+              )}
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-2 px-7 py-3.5 border border-accent/30 text-text font-semibold rounded-xl hover:bg-accent/10 hover:border-accent/60 transition-all duration-300 hover:scale-[1.02]"
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" /><path d="M9 18c-4.51 2-5-2-7-2" /></svg>
+                  {t('projectPage.sourceCode')}
+                </a>
+              )}
             </motion.div>
           </motion.div>
         </div>
@@ -133,7 +137,7 @@ export default function ProjectPage({ title, subtitle, techs, whyIBuiltThis, arc
               className="flex flex-col lg:flex-row items-center gap-8 lg:gap-16 mb-20 lg:mb-28 last:mb-0"
             >
               <motion.div
-                className={`w-full lg:w-2/5 shrink-0 order-1 ${
+                className={`w-full lg:w-2/5 shrink-0 flex justify-center order-1 ${
                   screen.align === 'left' ? 'lg:order-2' : 'lg:order-1'
                 }`}
                 initial={{ opacity: 0, x: screen.align === 'left' ? -30 : 30 }}
@@ -143,22 +147,23 @@ export default function ProjectPage({ title, subtitle, techs, whyIBuiltThis, arc
               >
                 <motion.button
                   onClick={() => setLightboxIndex(i)}
-                  className="group relative w-full focus:outline-none"
+                  className="group relative w-full max-w-[270px] focus:outline-none text-left"
                   aria-label={`Open ${screen.title} screenshot`}
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-accent/20 via-accent-secondary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative glass rounded-2xl overflow-hidden border border-accent/10 group-hover:border-accent/30 transition-all duration-500 shadow-xl shadow-black/30 group-hover:shadow-2xl group-hover:shadow-accent/10">
-                    <div className="absolute inset-0 bg-gradient-to-t from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none z-10" />
-                    <img
-                      src={screen.img}
-                      alt={screen.title}
-                      loading={i === 0 ? 'eager' : 'lazy'}
-                      className="w-full max-h-[600px] object-contain block group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
-                      <span className="px-4 py-2 glass rounded-full text-xs text-text font-medium backdrop-blur-md">
-                        {t('projectPage.clickToExpand')}
-                      </span>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-accent/20 via-accent-secondary/20 to-accent/20 rounded-[36px] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="phone-mockup relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                    <div className="phone-screen">
+                      <img
+                        src={screen.img}
+                        alt={screen.title}
+                        loading={i === 0 ? 'eager' : 'lazy'}
+                        className="phone-image"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
+                        <span className="px-4 py-2 glass rounded-full text-xs text-text font-semibold backdrop-blur-md border border-accent/30 shadow-xl">
+                          {t('projectPage.clickToExpand')}
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </motion.button>
