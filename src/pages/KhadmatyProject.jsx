@@ -570,7 +570,7 @@ export default function KhadmatyProject() {
       </section>
 
       {/* PROJECT OVERVIEW SECTION */}
-      <section id="overview" className="relative py-20 px-4 border-t border-accent/10 bg-[#0A0E1A]/50">
+      <section id="overview" className="relative py-20 px-4 border-t border-accent/10 bg-bg/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-accent font-mono text-xs uppercase tracking-widest block mb-2">
@@ -864,7 +864,7 @@ export default function KhadmatyProject() {
       </div>
 
       {/* TECHNICAL HIGHLIGHTS SECTION */}
-      <section className="py-20 px-4 border-t border-accent/10 bg-[#0A0E1A]">
+      <section className="py-20 px-4 border-t border-accent/10 bg-bg">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-accent font-mono text-xs uppercase tracking-widest block mb-2">
