@@ -141,7 +141,7 @@ export default function Projects() {
                     </a>
                     <Link
                       to={project.route}
-                      className="flex items-center gap-2 px-4 py-2 bg-accent text-text rounded-xl hover:bg-accent-secondary transition-all duration-300 text-xs font-semibold group/btn shadow-md shadow-accent/15 hover:shadow-accent/30 hover:scale-[1.02]"
+                      className="flex items-center gap-2 px-4 py-2 bg-accent text-bg font-bold rounded-xl hover:bg-accent-secondary transition-all duration-300 text-xs group/btn shadow-md shadow-accent/15 hover:shadow-accent/30 hover:scale-[1.02]"
                       aria-label={`View ${texts.title} case study`}
                     >
                       <span>{lang === 'ar' ? 'عرض دراسة الحالة' : 'View Case Study'}</span>

@@ -189,7 +189,7 @@ export default function Hero() {
             <span className="text-text bg-gradient-to-r from-text via-text/90 to-accent/90 bg-clip-text text-transparent">
               {typedText}
             </span>
-            <span className="w-[3px] h-7 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(234,88,12,0.8)]" aria-hidden="true" />
+            <span className="w-[3px] h-7 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(200,223,219,0.8)]" aria-hidden="true" />
           </motion.div>
 
           {/* Subtitle Bio */}
@@ -211,7 +211,7 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 bg-accent text-text font-semibold rounded-2xl overflow-hidden transition-all duration-300 shadow-xl shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02] active:scale-[0.98]"
+              className="group relative inline-flex items-center gap-2.5 px-8 py-3.5 bg-accent text-bg font-bold rounded-2xl overflow-hidden transition-all duration-300 shadow-xl shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02] active:scale-[0.98]"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-accent-secondary via-accent to-accent-secondary opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-gradient-shift" />
               <span className="relative flex items-center gap-2.5 text-sm sm:text-base">
