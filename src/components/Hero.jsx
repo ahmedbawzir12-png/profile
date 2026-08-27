@@ -189,7 +189,7 @@ export default function Hero() {
             <span className="text-text bg-gradient-to-r from-text via-text/90 to-accent/90 bg-clip-text text-transparent">
               {typedText}
             </span>
-            <span className="w-[3px] h-7 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(124,58,237,0.8)]" aria-hidden="true" />
+            <span className="w-[3px] h-7 bg-accent rounded-full animate-pulse shadow-[0_0_10px_rgba(234,88,12,0.8)]" aria-hidden="true" />
           </motion.div>
 
           {/* Subtitle Bio */}
@@ -321,9 +321,9 @@ export default function Hero() {
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ duration: 4.1, repeat: Infinity, ease: 'easeInOut', delay: 0.6 }}
-              className="absolute bottom-0 left-0 sm:-bottom-2 sm:-left-4 px-3 py-1.5 glass rounded-2xl border border-purple-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/85 z-20"
+              className="absolute bottom-0 left-0 sm:-bottom-2 sm:-left-4 px-3 py-1.5 glass rounded-2xl border border-orange-500/30 shadow-xl flex items-center gap-2 backdrop-blur-xl bg-bg/85 z-20"
             >
-              <div className="p-1 rounded-lg bg-purple-500/15 text-purple-400">
+              <div className="p-1 rounded-lg bg-orange-500/15 text-orange-400">
                 <Cpu size={13} />
               </div>
               <span className="text-[11px] sm:text-xs text-text font-bold">AI Workflow</span>

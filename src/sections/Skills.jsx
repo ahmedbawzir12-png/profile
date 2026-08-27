@@ -11,7 +11,7 @@ const skillMeta = [
   { from: '#3B82F6', to: '#06B6D4', cls: 'from-blue-500 to-cyan-400' },
   { from: '#EAB308', to: '#FB923C', cls: 'from-yellow-500 to-orange-400' },
   { from: '#38BDF8', to: '#3B82F6', cls: 'from-sky-400 to-blue-500' },
-  { from: '#A855F7', to: '#FB7185', cls: 'from-purple-500 to-pink-400' },
+  { from: '#EA580C', to: '#F97316', cls: 'from-orange-600 to-amber-500' },
   { from: '#FB7185', to: '#F43F5E', cls: 'from-pink-400 to-rose-500' },
   { from: '#34D399', to: '#14B8A6', cls: 'from-emerald-400 to-teal-500' },
 ]
@@ -60,7 +60,7 @@ function CircularProgress({ level, size = 100, strokeWidth = 6, from, to }) {
           cy={center}
           r={radius}
           fill="none"
-          stroke="rgba(124,58,237,0.1)"
+          stroke="rgba(234,88,12,0.12)"
           strokeWidth={strokeWidth}
         />
         <circle
