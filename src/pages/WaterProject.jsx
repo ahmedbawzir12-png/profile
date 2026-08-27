@@ -528,7 +528,7 @@ export default function WaterProject() {
                                   src={img}
                                   alt={screen.title}
                                   loading={idx < 2 ? 'eager' : 'lazy'}
-                                  className="phone-image object-cover w-full h-auto"
+                                  className="phone-image object-contain w-full h-full p-1"
                                 />
                                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20">
                                   <span className="px-4 py-2 glass rounded-full text-xs text-text font-semibold backdrop-blur-md border border-accent/30 shadow-xl">
@@ -609,7 +609,7 @@ export default function WaterProject() {
                                 src={img}
                                 alt={screen.title}
                                 loading={idx < 2 ? 'eager' : 'lazy'}
-                                className="w-full h-auto object-cover max-h-[420px]"
+                                className="w-full h-auto object-contain max-h-[460px]"
                               />
 
                               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 bg-bg/20 backdrop-blur-xs">

@@ -5,7 +5,7 @@ import khadmatyApp from '../assets/images/Khadmaty/users/home.jpg'
 import expenseApp from '../assets/images/expense-app.png'
 import qattaApp from '../assets/images/Qatta-app.png'
 import dafterApp from '../assets/images/AL-Dafter-app/dashbord.jpg'
-import waterAppCover from '../assets/images/Water Project Management System/شاشات الكمبيوتر/إحصائيات النظام.png'
+import waterAppCover from '../assets/images/Water Project Management System/شاشات الجوال/إحصائيات النظام.jpg'
 import { useLanguage } from '../context/useLanguage.js'
 
 const easePremium = [0.22, 1, 0.36, 1]
