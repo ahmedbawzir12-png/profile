@@ -90,7 +90,7 @@ export default function ProjectPage({ title, subtitle, techs, whyIBuiltThis, arc
                   href={live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-bg font-bold rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02]"
+                  className="group relative inline-flex items-center gap-2 px-7 py-3.5 bg-accent text-text font-semibold rounded-xl overflow-hidden transition-all duration-300 shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02]"
                 >
                   <span className="absolute inset-0 bg-gradient-to-r from-accent-secondary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <span className="relative flex items-center gap-2">

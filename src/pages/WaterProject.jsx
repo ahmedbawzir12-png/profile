@@ -467,7 +467,7 @@ export default function WaterProject() {
                 onClick={() => setActiveTab('mobile')}
                 className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
                   activeTab === 'mobile'
-                    ? 'bg-accent text-bg font-bold shadow-md shadow-accent/25'
+                    ? 'bg-accent text-text font-semibold shadow-md shadow-accent/25'
                     : 'text-secondary hover:text-text'
                 }`}
               >
@@ -477,7 +477,7 @@ export default function WaterProject() {
                 onClick={() => setActiveTab('desktop')}
                 className={`px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
                   activeTab === 'desktop'
-                    ? 'bg-accent text-bg font-bold shadow-md shadow-accent/25'
+                    ? 'bg-accent text-text font-semibold shadow-md shadow-accent/25'
                     : 'text-secondary hover:text-text'
                 }`}
               >
@@ -797,7 +797,7 @@ export default function WaterProject() {
 
             <Link
               to="/"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-bg font-bold rounded-xl shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-8 py-4 bg-accent text-text font-semibold rounded-xl shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:scale-[1.02] transition-all duration-300"
             >
               <ArrowLeft size={18} className={`rtl:rotate-180`} />
               <span>{t('projectPage.backToPortfolio')}</span>
