@@ -65,6 +65,10 @@ const en = {
       'Flutter applications built with clean architecture and premium user experiences.',
     list: [
       {
+        title: 'Water Project Management System',
+        desc: 'Production-grade dual-platform (Android & Windows) water project management system built from scratch with offline-first architecture, local SQLite, and automated Firebase synchronization.',
+      },
+      {
         title: 'Khadmaty App',
         desc: 'Comprehensive multi-role service marketplace platform connecting customers, service providers, brokers, and administrators in one intelligent ecosystem.',
       },
@@ -518,6 +522,256 @@ const en = {
       userComments: 'Customer Comments And Reviews Screen',
       notifications: 'Notifications Screen',
       adminDashboard: 'Admin Dashboard',
+    },
+  },
+  waterProject: {
+    hero: {
+      label: 'WATER PROJECT MANAGEMENT SYSTEM',
+      title: 'From Idea to a Real',
+      titleAccent: 'Working System',
+      subtitle: 'A complete water project management system built from scratch and currently used in real-world daily operations.',
+      badge: 'Production System',
+      platforms: ['Android Mobile', 'Windows Desktop', 'Offline-First', 'Firebase Sync'],
+    },
+    highlight: {
+      badge: 'REAL-WORLD IMPACT',
+      title: 'Built independently from idea to production.',
+      subtitle: 'Currently used in real-world daily operations to manage water utility projects efficiently.',
+    },
+    whyIBuiltThis: {
+      explanation: 'This project holds a special place because it is not just a demo or UI prototype. It is a full-fledged enterprise management system built independently from scratch to solve real operational bottlenecks in water project administration. From initial domain research to offline database design, UI/UX, multi-platform deployment (Android + Windows), and live site execution, every phase was executed to meet rigorous daily usage standards.',
+      highlights: [
+        'Built completely independently from problem analysis to live deployment.',
+        'Actively powers real-world daily operations for water supply project management.',
+        'Seamless dual-platform execution sharing the exact same architecture logic on Android and Windows.',
+        'Zero data loss architecture through robust offline local caching and queue synchronization.',
+      ],
+    },
+    features: {
+      label: 'SYSTEM SCOPE & CAPABILITIES',
+      title: 'Core System',
+      titleAccent: 'Features',
+      subtitle: 'Comprehensive module suite engineered for seamless field and back-office management.',
+      list: [
+        {
+          title: 'Customer Management',
+          desc: 'Comprehensive directory for storing customer data, water meter IDs, locations, and account statuses.',
+        },
+        {
+          title: 'Water Meter Readings',
+          desc: 'Fast field recording of periodic water meter numbers with input validation and history tracking.',
+        },
+        {
+          title: 'Consumption Calculation',
+          desc: 'Automated math engine calculating precise water usage volume based on tiered tariff structures.',
+        },
+        {
+          title: 'Invoice Generation',
+          desc: 'Instant generation of detailed customer bills based on actual consumption, previous balance, and tariffs.',
+        },
+        {
+          title: 'Payment Registration',
+          desc: 'Real-time entry of payments, partial settlements, and issuing immediate payment receipts.',
+        },
+        {
+          title: 'Accounts & Receivables',
+          desc: 'Tracking customer ledger balances, overdue debts, credit balances, and payment histories.',
+        },
+        {
+          title: 'Expense Management',
+          desc: 'Recording operational project expenses, fuel costs, maintenance, and categorization.',
+        },
+        {
+          title: 'PDF Reports & Invoices',
+          desc: 'Professional document rendering for official printable invoices and summary audit reports.',
+        },
+        {
+          title: 'Interactive Dashboard',
+          desc: 'Central command panel displaying operational metrics, total revenue, unpaid bills, and statistics.',
+        },
+        {
+          title: 'Users & Permissions',
+          desc: 'Role-based access control protecting critical data, system settings, and audit logs.',
+        },
+        {
+          title: 'Multi-Device Data Sync',
+          desc: 'Automated background synchronization engine keeping mobile field devices and office PCs in sync.',
+        },
+      ],
+    },
+    offline: {
+      label: 'ENGINEERING ARCHITECTURE',
+      title: 'Offline-First',
+      titleAccent: 'Architecture',
+      subtitle: 'Guaranteed uninterrupted field operations even without internet access, synchronizing automatically when online.',
+      description: 'The system does not rely on an active internet connection for every operation. All transactions, meter readings, and invoice creations are executed locally first in SQLite/Drift, queued, and synchronized seamlessly with Cloud Firestore when connection is restored.',
+      steps: [
+        { title: 'Flutter App', subtitle: 'UI & Business Logic' },
+        { title: 'Drift / SQLite', subtitle: 'Local Caching & ACID DB' },
+        { title: 'Sync Queue', subtitle: 'Transaction Queue & Conflicts' },
+        { title: 'Firebase Firestore', subtitle: 'Cloud Persistence & Sync' },
+      ],
+    },
+    platforms: {
+      label: 'DUAL PLATFORM ECOSYSTEM',
+      title: 'Android & Windows',
+      titleAccent: 'Integration',
+      subtitle: 'Two dedicated application interfaces sharing a single robust synchronization layer.',
+      androidTitle: 'Android Mobile App',
+      androidBadge: 'Field Operations',
+      androidDesc: 'Designed for field agents to register new customers, log meter readings during rounds, view instant invoice summaries, and work seamlessly on the move.',
+      windowsTitle: 'Windows Desktop App',
+      windowsBadge: 'Office Administration',
+      windowsDesc: 'Optimized for back-office administration: comprehensive project oversight, auditing financial transactions, printing PDF reports/invoices, managing expenses, and user role configuration.',
+      sharedTitle: 'Shared Sync & Data Layer',
+      sharedDesc: 'Unified Dart business logic and clean architecture layer powering both platforms with 100% data consistency.',
+    },
+    gallery: {
+      label: 'SYSTEM IN ACTION',
+      title: 'Interface Case Study &',
+      titleAccent: 'Screenshots',
+      subtitle: 'Explore actual operational screens from both Android Mobile and Windows Desktop versions.',
+      mobileTab: '📱 Android Mobile',
+      desktopTab: '💻 Windows Desktop',
+      clickToExpand: 'Click to expand view',
+      screenCount: 'Screenshots',
+    },
+    screens: {
+      mobile: [
+        {
+          title: 'System Statistics Dashboard',
+          desc: 'Field overview screen showing daily collection totals, active readings counter, and quick access to core field tools.',
+        },
+        {
+          title: 'Customer Directory',
+          desc: 'Searchable mobile list of all subscribers with meter numbers, account status indicators, and direct action shortcuts.',
+        },
+        {
+          title: 'Invoices Management',
+          desc: 'Mobile billing summary listing issued invoices, payment status indicators (Paid/Pending), and filters.',
+        },
+        {
+          title: 'Expenses Management',
+          desc: 'Field expense logger for recording daily maintenance costs, fuel purchases, and operational outlays.',
+        },
+        {
+          title: 'Customer Profile Details',
+          desc: 'Detailed view of subscriber profile, meter serial, geolocation data, balance summary, and transaction history.',
+        },
+        {
+          title: 'Invoice Details & Breakdown',
+          desc: 'Complete bill breakdown displaying current reading, previous reading, net units consumed, tariff rate, and calculated subtotal.',
+        },
+        {
+          title: 'Additional Invoice Specifications',
+          desc: 'Extended view for invoice payment history, partial payment logs, notes, and direct invoice share options.',
+        },
+      ],
+      desktop: [
+        {
+          title: 'Executive Admin Dashboard',
+          desc: 'Comprehensive Windows desktop dashboard presenting high-level analytical charts, revenue trends, reading completion rates, and system alerts.',
+        },
+        {
+          title: 'Report Generation Suite',
+          desc: 'Advanced reporting tool on Windows to filter project metrics by date range, customer sector, tariff group, or payment status.',
+        },
+        {
+          title: 'Desktop Customer Management Directory',
+          desc: 'Full-screen administrative data grid for managing customer records, bulk edits, account creation, and subscription status.',
+        },
+        {
+          title: 'PDF Invoice Document Generation',
+          desc: 'Official invoice layout preview optimized for thermal and A4 printing with official headers, QR breakdown, and itemized billing.',
+        },
+        {
+          title: 'Desktop Invoices Ledger',
+          desc: 'Centralized financial billing matrix displaying all issued invoices across the project with multi-column sorting and bulk export.',
+        },
+        {
+          title: 'Desktop Expense Ledger',
+          desc: 'Detailed administrative ledger for tracking project operational costs, categorizing spending, and managing receipts.',
+        },
+        {
+          title: 'Customer Account Profile',
+          desc: 'Desktop comprehensive customer view showing long-term consumption trends, payment ledger history, and meter inspection notes.',
+        },
+        {
+          title: 'Final Audit Summary Report',
+          desc: 'Exportable administrative audit report displaying total water volume distributed, collected revenue, net balance, and outstanding liabilities.',
+        },
+      ],
+    },
+    process: {
+      label: 'DEVELOPMENT JOURNEY',
+      title: 'From Idea to',
+      titleAccent: 'Production',
+      subtitle: 'The 12-step engineering roadmap followed to build a dependable software system for daily operations.',
+      steps: [
+        { number: '01', title: 'Problem Understanding', desc: 'Engaging with project operations to understand ground challenges in water distribution.' },
+        { number: '02', title: 'Requirements Analysis', desc: 'Defining system scope, tariff models, reading cycles, and administrative workflows.' },
+        { number: '03', title: 'Database Design', desc: 'Structuring relational schemas for local SQLite/Drift and Cloud Firestore collections.' },
+        { number: '04', title: 'UI/UX Design', desc: 'Crafting intuitive mobile & desktop interfaces customized for field & office environments.' },
+        { number: '05', title: 'Core Programming', desc: 'Implementing BLoC state management and clean architecture layers in Dart/Flutter.' },
+        { number: '06', title: 'Offline-First Architecture', desc: 'Building local SQLite caching engines using Drift for zero-latency database operations.' },
+        { number: '07', title: 'Sync Queue Engine', desc: 'Engineering robust transaction queuing to resolve conflict and sync with Firebase when online.' },
+        { number: '08', title: 'Rigorous Testing', desc: 'Testing edge cases: offline reads, network timeouts, large data grids, and math validations.' },
+        { number: '09', title: 'Android Deployment', desc: 'Building, optimizing, and deploying APKs for field agents on mobile devices.' },
+        { number: '10', title: 'Windows Desktop Build', desc: 'Compiling native Windows desktop applications with multi-window and PDF print support.' },
+        { number: '11', title: 'Troubleshooting & Perf Tuning', desc: 'Optimizing database query indices, memory usage, and background sync routines.' },
+        { number: '12', title: 'Real Production Execution', desc: 'Deploying the system into active daily operational usage for managing the water project.' },
+      ],
+    },
+    techStack: {
+      label: 'TECHNOLOGY STACK',
+      title: 'Built With Modern',
+      titleAccent: 'Technologies',
+      subtitle: 'Proven tools and frameworks selected for high performance, reliability, and multi-platform stability.',
+      list: [
+        { name: 'Flutter', category: 'Cross-Platform Framework' },
+        { name: 'Dart', category: 'Programming Language' },
+        { name: 'Clean Architecture', category: 'Software Design' },
+        { name: 'BLoC Pattern', category: 'State Management' },
+        { name: 'Drift / SQLite', category: 'Local Relational Database' },
+        { name: 'Firebase Authentication', category: 'Security & Auth' },
+        { name: 'Cloud Firestore', category: 'Cloud Database & Sync' },
+        { name: 'Offline-First Architecture', category: 'System Architecture' },
+        { name: 'Sync Queue Engine', category: 'Data Synchronization' },
+        { name: 'Dependency Injection', category: 'GetIt / Injectable' },
+        { name: 'PDF Generation', category: 'Document Export' },
+        { name: 'Responsive UI', category: 'Mobile & Desktop Design' },
+      ],
+    },
+    challenges: {
+      label: 'ENGINEERING SOLUTIONS',
+      title: 'Technical',
+      titleAccent: 'Challenges',
+      subtitle: 'Overcoming complex real-world software engineering obstacles during development.',
+      list: [
+        {
+          title: 'Unstable Network Environments',
+          desc: 'Field agents often operate in remote areas without reliable cellular connectivity. Solution: Local-first persistence using Drift/SQLite ensured uninterrupted operation.',
+        },
+        {
+          title: 'Dual-Platform State Synchronization',
+          desc: 'Ensuring data modified on mobile field devices seamlessly updates office Windows desktops without race conditions. Solution: Transaction-based Sync Queue sending delta logs to Cloud Firestore.',
+        },
+        {
+          title: 'Accurate Tariff & Billing Calculations',
+          desc: 'Water consumption tariffs require non-linear step calculations. Solution: Isolated pure Dart domain logic with automated unit tests for math accuracy.',
+        },
+        {
+          title: 'Native PDF Document Export',
+          desc: 'Generating crisp printable invoices and multi-page audit reports natively on desktop and mobile. Solution: Customized PDF rendering engine with Arabic typography support.',
+        },
+      ],
+    },
+    result: {
+      label: 'PROJECT OUTCOME',
+      title: 'The',
+      titleAccent: 'Result',
+      subtitle: 'Transforming operational challenges into a dependable, production-grade software solution.',
+      text: 'The Water Project Management System successfully transitioned from an operational necessity into a live, highly reliable production system used in daily operations. Beyond writing code, the core value lies in taking full ownership of a complex domain problem, engineering a resilient offline-first multi-platform architecture, and delivering software that continuous business operations rely upon every single day.',
     },
   },
 }

@@ -4,12 +4,19 @@ import { Link } from 'react-router-dom'
 import khadmatyApp from '../assets/images/Khadmaty/users/home.jpg'
 import expenseApp from '../assets/images/expense-app.png'
 import qattaApp from '../assets/images/Qatta-app.png'
-import dafterApp from '../assets/images/AL-Dafter-app.png'
+import dafterApp from '../assets/images/AL-Dafter-app/dashbord.jpg'
+import waterAppCover from '../assets/images/Water Project Management System/شاشات الكمبيوتر/إحصائيات النظام.png'
 import { useLanguage } from '../context/useLanguage.js'
 
 const easePremium = [0.22, 1, 0.36, 1]
 
 const projectsData = [
+  {
+    route: '/projects/water-project-management-system',
+    img: waterAppCover,
+    tech: ['Flutter', 'Drift / SQLite', 'Firebase', 'Offline-First'],
+    github: 'https://github.com/ahmedbawzir12-png',
+  },
   {
     route: '/projects/khadmaty',
     img: khadmatyApp,

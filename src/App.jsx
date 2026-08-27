@@ -10,6 +10,7 @@ import Process from './sections/Process'
 import Skills from './sections/Skills'
 import Contact from './sections/Contact'
 import Loader from './components/Loader'
+import WaterProject from './pages/WaterProject.jsx'
 import QattaProject from './pages/QattaProject.jsx'
 import MasrofyProject from './pages/MasrofyProject.jsx'
 import ALDaftProject from './pages/ALDaftProject.jsx'
@@ -249,6 +250,7 @@ export default function App() {
     <div className="min-h-screen bg-bg">
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/projects/water-project-management-system" element={<WaterProject />} />
         <Route path="/projects/khadmaty" element={<KhadmatyProject />} />
         <Route path="/projects/masrofy" element={<MasrofyProject />} />
         <Route path="/projects/qatta" element={<QattaProject />} />
